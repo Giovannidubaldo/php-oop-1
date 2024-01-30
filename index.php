@@ -7,5 +7,13 @@
         public $genre;
         public $year;
         public $lang;
+
+        // Definito un costruttore
+        function __construct($_title, $_genre, $_year, $_lang){
+            $this->$title = $_title;
+            $this->$genre = $_genre;
+            $this->$year = $_year;
+            $this->$lang = $_lang;
+        }
     }
 ?>

@@ -15,5 +15,12 @@
             $this->$year = $_year;
             $this->$lang = $_lang;
         }
+
+        // Definisco un metodo
+        public function printedFilm(){
+            return $this->title.", Genere: ".$this->genre", Anno di uscita: ".$this->year.", Lingua: ".$this->lang;
+        }
     }
+
+    
 ?>

@@ -18,14 +18,14 @@
 
         // Definisco un metodo
         public function printedFilm(){
-            return "<div>".$this->title.". Genere: ".$this->genre.". Anno di uscita: ".$this->year.". Lingua originale: ".$this->lang."</div>";
+            return "<div>".$this->title.". Genere: ".implode('/', $this->genre).". Anno di uscita: ".$this->year.". Lingua originale: ".$this->lang."</div>";
         }
     }
 
     // Creo le istanze della classe Movie
-    $movie_1 = new Movie("Inception", "Azione", 2010, "Inglese");
-    $movie_2 = new Movie("La vita è bella", "Drammatico", 1997, "Italiano");
-    $movie_3 = new Movie("Quasi amici - Intouchables", "Commedia", 2011, "Francese");
+    $movie_1 = new Movie("Inception", ["Azione", "Sci-fi"], 2010, "Inglese");
+    $movie_2 = new Movie("La vita è bella", ["Drammatico", "Guerra"], 1997, "Italiano");
+    $movie_3 = new Movie("Quasi amici - Intouchables", ["Commedia", "Drammatico"], 2011, "Francese");
 
     $movieArray = [
         $movie_1,
@@ -54,7 +54,7 @@
                         <div class="card-title">
                             <h3><?php echo $movie->title ?></h3>
                         </div>
-                        <p><?php echo "Genere: ".$movie->genre ?></p>
+                        <p><?php echo "Genere: ".implode('/', $movie->genre) ?></p>
                         <p><?php echo "Anno di uscita: ".$movie->year ?></p>
                         <p><?php echo "Lingua originale: ".$movie->lang ?></p>
                     </div>
